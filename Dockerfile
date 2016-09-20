@@ -7,7 +7,7 @@ RUN apk update && \
     apk upgrade && \
     apk add sudo && \
     rm -rf /var/cache/apk/* && \
-    adduser --system -D -h /home/www-app -s /sbin/nologin -u 1001 www-app && \
+    adduser -S -D -h /home/www-app -s /sbin/nologin -u 1001 www-app && \
     echo "www-app ALL=(ALL) NOPASSWD: apk" >> /etc/sudoers.d/www-app && \
     chmod 0440 /etc/sudoers.d/www-app
 
