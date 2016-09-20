@@ -5,7 +5,7 @@ USER root
 # Install usefull binaries
 RUN apk update && \
     apk upgrade && \
-    apk install sudo && \
+    apk add sudo && \
     rm -rf /var/cache/apk/* && \
     adduser --system -D -h /home/www-app -s /sbin/nologin -u 1001 www-app && \
     echo "www-app ALL=(ALL) NOPASSWD: apk" >> /etc/sudoers.d/www-app && \
